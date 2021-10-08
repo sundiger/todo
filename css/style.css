@@ -1,0 +1,301 @@
+@charset "UTF-8";
+* {
+  text-decoration: none;
+  outline: none;
+  overflow: hidden; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none; }
+
+#formParent {
+  margin-left: 40%;
+  margin-top: 15%;
+  margin-bottom: 200%;
+  width: 20%; }
+  #formParent h2 {
+    border-bottom: 1px solid black; }
+  #formParent img {
+    width: 32px;
+    height: 26px; }
+  #formParent .formNameInput {
+    margin-top: 40px;
+    margin-right: 20px; }
+  #formParent .formPassInput {
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px; }
+  #formParent .fromBtn {
+    width: 20%;
+    margin-bottom: 20px;
+    background: none !important; }
+
+.headerList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white; }
+  .headerList h4 {
+    margin-left: 5%;
+    color: gray; }
+  .headerList button {
+    margin-right: 5%;
+    background: none;
+    border: none;
+    color: gray;
+    transition: .5s; }
+  .headerList button:hover {
+    transform: rotate(360deg); }
+  .headerList button:active, .headerList button:focus {
+    outline: none; }
+
+.blockLeft {
+  height: 100vh;
+  border-right: 1px solid black; }
+  .blockLeft header {
+    border-bottom: 1px solid black; }
+  .blockLeft #delo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse; }
+  .blockLeft textarea {
+    border: 2px solid gray;
+    width: 80%;
+    /*padding: 3%;*/
+    /*margin-top: 3%;*/
+    transition: .5s;
+    /*pointer-events: none;		*/
+    resize: none;
+    cursor: pointer; }
+  .blockLeft textarea:hover {
+    background-color: #DA70D6; }
+
+#blockRight {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-left: 1px solid black;
+  margin-left: .5vw; }
+  #blockRight header {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  #blockRight content {
+    width: 100vw; }
+  #blockRight footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; }
+
+/*buttons*/
+.flower, .cross {
+  border: 0px;
+  border-radius: 100%;
+  outline: none; }
+
+.add {
+  border: 0px;
+  border-radius: 100%;
+  transition: .5s;
+  bottom: 0; }
+
+.flower:active, .flower:focus, .cross:active, .cross:focus, .add:active, .add:focus {
+  outline: none; }
+
+.flower:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "✿"; }
+
+.cross:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "✖"; }
+
+.add:after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "✖";
+  transform: rotate(45deg); }
+
+.flower:hover {
+  color: #f99e4e;
+  text-shadow: 0px 0px 6px #f99e4e; }
+
+.cross:hover {
+  color: #eb2f2f;
+  text-shadow: 0px 0px 6px #eb2f2f; }
+
+.add:hover {
+  background-color: lightgreen;
+  transform: rotate(360deg); }
+
+#modal {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50vw;
+  height: 40vh;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-left: 25%;
+  margin-top: 10%;
+  box-shadow: 10px 10px 10px 10px gray; }
+  #modal .cross {
+    background-color: red;
+    margin-left: 90%;
+    margin-top: -10%; }
+  #modal h2 {
+    margin-top: 10%; }
+  #modal button {
+    margin-top: 1%; }
+  #modal .modalDivLeft {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    align-items: center; }
+    #modal .modalDivLeft #inputModal {
+      margin-left: 1%; }
+
+#modalChange, #divModalAddBus {
+  position: fixed;
+  display: none;
+  left: 28%;
+  bottom: 0;
+  right: 0;
+  top: 20%;
+  width: 50vw;
+  height: 30vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  z-index: 999999; }
+  #modalChange button, #divModalAddBus button {
+    margin-top: 1%; }
+
+#divModalAddBus {
+  display: none; }
+  #divModalAddBus #divModalAddBusChild {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    #divModalAddBus #divModalAddBusChild div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #divModalAddBus #divModalAddBusChild div span {
+        margin-right: 1%; }
+  #divModalAddBus #inputModalCheck[type=checkbox] {
+    content: "\2713";
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 15px;
+    cursor: pointer; }
+
+#blockRight content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+#blockRight div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+#blockRight #divRchild {
+  border: 2px solid gray;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center; }
+#blockRight textarea {
+  border: none;
+  width: 60%;
+  transition: .5s;
+  resize: none; }
+
+#inputModalCheckAddList, #inputModalCheckAddListNo {
+  background: url("../img/ok.png") no-repeat;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  background-color: lightgreen;
+  margin-right: 1%; }
+
+#inputModalCheckAddListNo {
+  background: none;
+  border: 1px solid gray; }
+
+#divModalDelete, #divModalParentDelete {
+  position: fixed;
+  display: none;
+  left: 28%;
+  bottom: 0;
+  right: 0;
+  top: 20%;
+  width: 50vw;
+  height: 30vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  z-index: 999999; }
+  #divModalDelete #divModalDeleteBtns, #divModalParentDelete #divModalDeleteBtns {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+
+#done, #toDo, #notDone {
+  display: none;
+  width: 12px !important;
+  height: 12px !important;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: red;
+  transition: .5s;
+  margin-right: 1%; }
+
+#done {
+  background-color: lightgreen; }
+
+#toDo {
+  background-color: gray; }
+
+#done:hover, #toDo:hover, #notDone:hover {
+  box-shadow: 0px 0px 10px #DA70D6; }
+
+/*# sourceMappingURL=style.css.map */
